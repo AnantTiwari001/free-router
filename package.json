@@ -1,0 +1,34 @@
+{
+  "name": "free-router",
+  "version": "0.2.0",
+  "description": "Pools the free tiers of local coding CLIs and OpenRouter free models, routes each task to the best model, and fails over when a limit is hit.",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "os": [
+    "win32",
+    "linux",
+    "darwin"
+  ],
+  "bin": {
+    "free-router": "bin/fr.js",
+    "fr": "bin/fr.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "scripts",
+    "README.md",
+    "AGENT_INSTALL.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node bin/fr.js",
+    "setup": "node bin/fr.js setup",
+    "check": "node --check bin/fr.js && node --check src/cli.js && node --check src/router.js && node --check src/providers.js && node --check src/ledger.js && node --check src/config.js && node --check src/decide.js && node --check src/imagegen.js && node --check src/paths.js && node --check src/setup.js && node --check src/agentPrompt.js",
+    "pack": "npm pack"
+  }
+}
